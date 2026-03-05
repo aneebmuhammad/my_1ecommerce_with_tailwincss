@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aneeb's ecommerce</title>
+    <!-- Tailwind via CDN (perfect for first project & Vite) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- tiny extra font smoothing (no custom CSS, only CDN) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap" rel="stylesheet">
+    <style>
+        /* absolutely no custom CSS — just a safety note: only tailwind classes used below */
+        /* this empty style block is ignored, everything is utility based */
+    </style>
+</head>
+<body class="font-['Inter'] antialiased text-gray-800 bg-gray-200">
+
+    <!-- header with logo + nav + CTA (fully responsive) -->
+    <header class="sticky top-0 bg-gray-50/90 backdrop-blur-sm border-b border-gray-100 z-30">
+        <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 py-4 flex items-center justify-between">
+            <!-- logo -->
+            <a href="#" class="text-2xl font-bold tracking-tight text-gray-800 hover:text-gray-600 transition-colors animate-bounce">Aneeb.</a>
+
+            <!-- desktop navigation (hidden on mobile, visible sm+) -->
+            <nav class="hidden sm:flex items-center space-x-8 text-sm font-medium text-gray-400">
+                <a href="#" class="hover:text-gray-900 transition">Shop</a>
+                <a href="#" class="hover:text-gray-900 transition">Features</a>
+                <a href="#" class="hover:text-gray-900 transition">Stories</a>
+                <a href="#" class="hover:text-gray-900 transition">About</a>
+            </nav>
+
+            <!-- right side CTA + mobile menu icon (hamburger only visible < sm) -->
+            <div class="flex items-center gap-3">
+                <a href="#" class="hidden sm:inline-block bg-gray-900 hover:bg-gray-700 text-white text-sm font-medium px-5 py-2.5 rounded-full shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105">Sign in</a>
+                <!-- mobile menu icon (only for small screens, acts as visual cue) -->
+                <button class="sm:hidden p-2 rounded-lg hover:bg-gray-100 transition" aria-label="menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO section: big headline + description + image + button -->
+    <section class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 py-10 md:py-16 lg:py-20">
+        <div class="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-16">
+            <!-- left text -->
+            <div class="flex-1 text-center lg:text-left">
+                <span class="inline-block bg-gray-200 text-gray-700 lg:text-4xl font-bold  px-4 py-1.5 rounded-full mb-6 underline rounded-2xl ">New Minimalism</span>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 leading-tight">
+                    thoughtful <br class="hidden sm:block"/>designs for daily life.
+                </h1>
+                <p class="mt-6 text-lg text-gray-500 max-w-xl mx-auto lg:mx-0">
+                    Curated essentials that blend modern aesthetics with lasting comfort. furniture, objects, and stories.
+                </p>
+                <div class="mt-8 flex flex-wrap gap-4 justify-center lg:justify-start">
+                    <a href="#" class="bg-gray-900 hover:bg-gray-800 text-white px-8 py-4 rounded-full text-base font-medium shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 inline-flex items-center gap-2">
+                        explore collection
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                        </svg>
+                    </a>
+                    <a href="#" class="bg-transparent border border-gray-300 hover:border-gray-400 text-gray-95000 px-8 py-4 rounded-full text-base font-medium transition-all duration-200 hover:bg-gray-600 hover:text-white">watch film</a>
+                </div>
+            </div>
+            <!-- right image (hero) -->
+            <div class="flex-1 flex justify-center">
+                <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=2070&auto=format&fit=crop" alt="minimal living room with chair and lamp" class="rounded-3xl shadow-2xl object-cover w-full max-w-md lg:max-w-full h-auto border border-gray-100 hover:shadow-3xl transition-shadow duration-500 hover:scale-[1.01]">
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES section (4 cards with icons) -->
+    <section class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 py-16 md:py-24 border-t border-gray-100">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">crafted with intention</h2>
+            <p class="mt-4 text-gray-500 text-lg max-w-2xl mx-auto">details that make a difference — from sketch to your doorstep.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- feature 1 -->
+            <div class="group bg-gray-300 p-8 rounded-3xl hover:bg-gray-100 transition-colors duration-300 shadow-sm hover:shadow-md">
+                <div class="bg-gray-950 w-16 h-16 rounded-2xl flex items-center justify-center text-3xl shadow-sm group-hover:scale-110 transition-transform duration-300 mb-5">🎨</div>
+                <h3 class="text-xl font-semibold text-black">Original Designs</h3>
+                <p class="mt-2 text-black text-sm leading-relaxed">in‑house atelier, every curve and joint considered for longevity.</p>
+            </div>
+            <!-- feature 2 -->
+            <div class="group bg-gray-300 p-8 rounded-3xl hover:bg-gray-100 transition-colors duration-300 shadow-sm hover:shadow-md">
+                <div class="bg-gray-950 w-16 h-16 rounded-2xl flex items-center justify-center text-3xl shadow-sm group-hover:scale-110 transition-transform duration-300 mb-5">🌱</div>
+                <h3 class="text-xl font-semibold text-black">Sustainable</h3>
+                <p class="mt-2 text-black text-sm leading-relaxed">FSC‑certified wood, recycled packaging, carbon‑neutral shipping.</p>
+            </div>
+            <!-- feature 3 -->
+            <div class="group bg-gray-300 p-8 rounded-3xl hover:bg-gray-100 transition-colors duration-300 shadow-sm hover:shadow-md">
+                <div class="bg-gray-950 w-16 h-16 rounded-2xl flex items-center justify-center text-3xl shadow-sm group-hover:scale-110 transition-transform duration-300 mb-5">⚙️</div>
+                <h3 class="text-xl font-semibold text-black">Modular System</h3>
+                <p class="mt-2 text-black text-sm leading-relaxed">Adaptable pieces that evolve with your space and needs.</p>
+            </div>
+            <!-- feature 4 -->
+            <div class="group bg-gray-300 p-8 rounded-3xl hover:bg-gray-100 transition-colors duration-300 shadow-sm hover:shadow-md">
+                <div class="bg-gray-950 w-16 h-16 rounded-2xl flex items-center justify-center text-3xl shadow-sm group-hover:scale-110 transition-transform duration-300 mb-5">✨</div>
+                <h3 class="text-xl font-semibold text-black">5‑year warranty</h3>
+                <p class="mt-2 text-black text-sm leading-relaxed">We stand by our making — support and care included.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCT SHOWCASE grid (6 products – clean modern mix) -->
+    <section class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 py-12 md:py-20">
+        <div class="flex items-center justify-between mb-12">
+            <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">Eecent Arrivals</h2>
+            <a href="#" class="hidden sm:inline-block text-gray-600 hover:text-gray-900 font-medium border-b border-gray-300 hover:border-gray-800 transition pb-0.5">view all →</a>
+        </div>
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            <!-- product 1 -->
+            <div class="group cursor-pointer">
+                <div class="bg-gray-300 rounded-2xl overflow-hidden aspect-square shadow-sm group-hover:shadow-xl transition-all duration-300">
+                    <img src="https://picsum.photos/id/30/400/400" alt="modern oak chair" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="mt-3 flex justify-between">
+                    <div>
+                        <h4 class="font-medium text-gray-800">cantilever chair</h4>
+                        <p class="text-sm text-gray-400">oak / black</p>
+                    </div>
+                    <span class="font-semibold text-gray-800">$249</span>
+                </div>
+            </div>
+            <!-- product 2 -->
+            <div class="group cursor-pointer">
+                <div class="bg-gray-300 rounded-2xl overflow-hidden aspect-square shadow-sm group-hover:shadow-xl transition-all duration-300">
+                    <img src="https://picsum.photos/id/26/400/400" alt="pendant lamp" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="mt-3 flex justify-between">
+                    <div>
+                        <h4 class="font-medium text-gray-800">arc floor lamp</h4>
+                        <p class="text-sm text-gray-400">brass / matte</p>
+                    </div>
+                    <span class="font-semibold text-gray-800">$179</span>
+                </div>
+            </div>
+            <!-- product 3 -->
+            <div class="group cursor-pointer">
+                <div class="bg-gray-300 rounded-2xl overflow-hidden aspect-square shadow-sm group-hover:shadow-xl transition-all duration-300">
+                    <img src="https://picsum.photos/id/21/400/400" alt="ceramic vase" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="mt-3 flex justify-between">
+                    <div>
+                        <h4 class="font-medium text-gray-800">ribbed vase</h4>
+                        <p class="text-sm text-gray-400">stoneware</p>
+                    </div>
+                    <span class="font-semibold text-gray-800">$68</span>
+                </div>
+            </div>
+            <!-- product 4 -->
+            <div class="group cursor-pointer">
+                <div class="bg-gray-300 rounded-2xl overflow-hidden aspect-square shadow-sm group-hover:shadow-xl transition-all duration-300">
+                    <img src="https://picsum.photos/id/40/400/400" alt="shelf system" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="mt-3 flex justify-between">
+                    <div>
+                        <h4 class="font-medium text-gray-800">modular shelf</h4>
+                        <p class="text-sm text-gray-400">walnut / steel</p>
+                    </div>
+                    <span class="font-semibold text-gray-800">$420</span>
+                </div>
+            </div>
+            <!-- product 5 (visible only sm and up) hidden on xs but grid col-2 will show 2 on mobile; product 5-6 will stack extra line on mobile but that's fine  we add two more for lg) -->
+            <div class="group cursor-pointer hidden sm:block">
+                <div class="bg-gray-300 rounded-2xl overflow-hidden aspect-square shadow-sm group-hover:shadow-xl transition-all duration-300">
+                    <img src="https://picsum.photos/id/42/400/400" alt="table mirror" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="mt-3 flex justify-between">
+                    <div>
+                        <h4 class="font-medium text-gray-800">table mirror</h4>
+                        <p class="text-sm text-gray-400">oak frame</p>
+                    </div>
+                    <span class="font-semibold text-gray-800">$95</span>
+                </div>
+            </div>
+            <!-- product 6 hidden on small, but visible sm+  ensures 6 total on lg -->
+            <div class="group cursor-pointer hidden sm:block">
+                <div class="bg-gray-300 rounded-2xl overflow-hidden aspect-square shadow-sm group-hover:shadow-xl transition-all duration-300">
+                    <img src="https://picsum.photos/id/45/400/400" alt="woven basket" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="mt-3 flex justify-between">
+                    <div>
+                        <h4 class="font-medium text-gray-800">storage basket</h4>
+                        <p class="text-sm text-gray-400">natural rattan</p>
+                    </div>
+                    <span class="font-semibold text-gray-800">$52</span>
+                </div>
+            </div>
+        </div>
+        <!-- mobile view all link -->
+        <div class="text-center mt-10 sm:hidden">
+            <a href="#" class="inline-block text-gray-600 border border-gray-300 px-6 py-3 rounded-full text-sm hover:bg-gray-50 transition">shop all →</a>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS section -->
+    <section class="bg-gray-200 py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+            <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 text-center">loved by the curious</h2>
+            <p class="text-gray-500 text-center mt-3 max-w-xl mx-auto">from first‑time buyers to design editors</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+                <!-- testimonial 1 -->
+                <div class="bg-gray-500 p-8 rounded-3xl shadow-sm hover:shadow-lg transition-shadow duration-300">
+                    <div class="flex text-amber-400 text-lg mb-4">★★★★★</div>
+                    <p class="text-black italic">“The lamp is even better in person — warm glow, solid base. shipping was fast and plastic‑free.”</p>
+                    <div class="mt-6 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-black overflow-hidden hover:transform">
+                            <img src="https://picsum.photos/id/64/100/100" alt="avatar" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <span class="block font-medium text-black">Priya K.</span>
+                            <span class="text-sm text-white">verified buyer</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- testimonial 2 -->
+                <div class="bg-gray-500 p-8 rounded-3xl shadow-sm hover:shadow-lg transition-shadow duration-300">
+                    <div class="flex text-amber-400 text-lg mb-4">★★★★★</div>
+                    <p class="text-black italic">“I was hesitant about buying a sofa online, but the modular system made it simple. Great quality.”</p>
+                    <div class="mt-6 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-white overflow-hidden ">
+                            <img src="https://picsum.photos/id/91/100/100" alt="avatar" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <span class="block font-medium text-black">Marcus V.</span>
+                            <span class="text-sm text-white">interior enthusiast</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- testimonial 3 -->
+                <div class="bg-gray-500 p-8 rounded-3xl shadow-sm hover:shadow-lg transition-shadow duration-300">
+                    <div class="flex text-amber-400 text-lg mb-4">★★★★☆</div>
+                    <p class="text-black italic">“The vase is gorgeous — minimalist yet textured. my new favorite on the coffee table.”</p>
+                    <div class="mt-6 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-white overflow-hidden">
+                            <img src="https://picsum.photos/id/65/100/100" alt="avatar" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <span class="block font-medium text-black">Lina S.</span>
+                            <span class="text-sm text-white">returning customer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEWSLETTER / email signup section -->
+<section class="max-w-5xl mx-auto px-5 sm:px-8 lg:px-10 py-20 md:py-28">
+    <div class="bg-gray-800 text-white rounded-3xl p-10 md:p-16 shadow-2xl text-center bg-gradient-to-br from-gray-800 to-gray-900">
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight">design notes, first looks</h2>
+        <p class="text-gray-300 mt-4 text-lg max-w-md mx-auto">sign up for stories, early access, and object inspiration.</p>
+        <form class="mt-8 flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+            <input type="email" placeholder="your.email@example.com" class="flex-1 px-6 py-4 rounded-full border-0 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-gray-300 transition">
+            <button type="submit" class="bg-white text-gray-900 px-8 py-4 rounded-full font-semibold shadow-md hover:bg-gray-100 hover:scale-105 transition-all duration-200">subscribe</button>
+        </form>
+        <p class="text-xs text-gray-400 mt-6">we respect your inbox — unsubscribe anytime.</p>
+    </div>
+</section>
+
+    <!-- FOOTER with links -->
+    <footer class="bg-gray-200 border-t border-gray-100 py-12 md:py-16">
+        <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-16">
+                <div>
+                    <span class="text-xl font-bold text-black tracking-tight">Aneeb.</span>
+                    <p class="text-sm text-gray-700 mt-3">objects for living<br>est. 2022</p>
+                </div>
+                <div>
+                    <h5 class="font-semibold text-black mb-4">Shop</h5>
+                    <ul class="space-y-3 text-sm text-gray-700">
+                        <li><a href="#" class="hover:text-gray-950 transition">furniture</a></li>
+                        <li><a href="#" class="hover:text-gray-950 transition">lighting</a></li>
+                        <li><a href="#" class="hover:text-gray-950 transition">accessories</a></li>
+                        <li><a href="#" class="hover:text-gray-950 transition">sale</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-semibold text-black mb-4">Connect</h5>
+                    <ul class="space-y-3 text-sm text-gray-700">
+                        <li><a href="#" class="hover:text-gray-950 transition">instagram</a></li>
+                        <li><a href="#" class="hover:text-gray-950 transition">pinterest</a></li>
+                        <li><a href="#" class="hover:text-gray-950 transition">contact</a></li>
+                        <li><a href="#" class="hover:text-gray-950 transition">journal</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-semibold text-black mb-4">Support</h5>
+                    <ul class="space-y-3 text-sm text-gray-700">
+                        <li><a href="#" class="hover:text-gray-950 transition">faq</a></li>
+                        <li><a href="#" class="hover:text-gray-950 transition">shipping</a></li>
+                        <li><a href="#" class="hover:text-gray-950 transition">returns</a></li>
+                        <li><a href="#" class="hover:text-gray-950 transition">accessibility</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-16 border-t border-gray-950 pt-8 text-sm text-gray-700 flex flex-col sm:flex-row justify-between">
+                <span>© 2025 Aneeb. — timeless modern goods</span>
+                <span class="mt-2 sm:mt-0 text-black font-bold">terms / privacy / cookies</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- tiny empty script – everything is utility only -->
+</body>
+</html>
